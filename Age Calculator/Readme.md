@@ -8,7 +8,7 @@ The Age Calculator project is a straightforward web application that takes your 
 
 ## Try It Live
 
-You can try the Age Calculator live by following this link: [Age Calculator](https://yourusername.github.io/repositoryname)
+You can try the Age Calculator live by following this link: [Age Calculator](https://karan9927.github.io/JavaScript/Age%20Calculator/)
 
 ## Project Features
 
@@ -22,9 +22,9 @@ You can try the Age Calculator live by following this link: [Age Calculator](htt
 
 ## How to Use
 
-1. Download the `Age-calculator.html` file from this repository to your local machine.
+1. Download the `index-index.html` file from this repository to your local machine.
 
-2. Open the `Age-calculator.html` file in your web browser.
+2. Open the `index.html` file in your web browser.
 
 3. Enter your birthdate and click the "Calculate Age" button to see your age.
 
