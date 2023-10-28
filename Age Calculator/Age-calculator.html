@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        margin-top: 50px;
+        box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+        width: 640px;
+        height: 282px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h1 {
+        padding: 20px;
+        font-size: 42px;
+      }
+      p {
+        font-weight: bold;
+        padding: 10px;
+        font-size: 18px;
+      }
+      .dob {
+        width: 50%;
+        height: 36px;
+        border-radius: 5px;
+        border: 1px solid #d3d3d3;
+        padding: 10px;
+      }
+      button {
+        padding: 10px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 10px;
+      }
+      button:hover {
+        cursor: pointer;
+        background-color: #0167d4;
+      }
+      .display {
+        font-size: 26px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Age Calculator</h1>
+      <p>Enter your date of birth</p>
+      <input class="dob" type="date" id="dob" name="dob" />
+      <button class="btn" onclick="handleClick()">Calculate Age</button>
+      <p id="display">Your Age is 0 years old</p>
+    </div>
+    <script>
+      let data = document.getElementById("dob");
+      let selectedYear;
+      let selectedMonth;
+      data.addEventListener("input", function () {
+        let selectedDate = new Date(data.value);
+        selectedYear = selectedDate.getFullYear();
+        selectedMonth = selectedDate.getMonth();
+        selecteddate = selectedDate.getDay();
+        // console.log(selectedYear);
+      });
+
+      function handleClick() {
+        let paragraph = document.getElementById("display");
+        let currentDate = new Date();
+        let currentYear = currentDate.getFullYear();
+        let currentMonth = currentDate.getMonth();
+        // console.log(currentYear);
+        // console.log(currentMonth);
+        let age;
+        let month;
+        let day;
+        if (currentYear > selectedYear) {
+          age = currentYear - selectedYear;
+          month = currentMonth - selectedMonth;
+          paragraph.textContent =
+            "Your Age is " + age + " years and " + month + " months old";
+        } else {
+          paragraph.textContent =
+            "Invalid Age, Age entered should be less than " + currentYear;
+        }
+      }
+    </script>
+  </body>
+</html>
