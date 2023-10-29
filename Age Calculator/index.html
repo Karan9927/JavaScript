@@ -11,66 +11,174 @@
         box-sizing: border-box;
       }
       body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(
+          38deg,
+          rgba(0, 0, 0, 1) 0%,
+          rgba(96, 6, 153, 1) 100%
+        );
+        transition: all 2s;
+      }
+
+      @media only screen and (max-width: 480px) {
+        .form {
+          display: flex;
+          flex-direction: column;
+        }
+        #dob {
+          margin-left: auto;
+          margin-right: auto;
+        }
       }
       .container {
-        margin-top: 50px;
         box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
-        width: 640px;
-        height: 282px;
+        margin: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
         border-radius: 12px;
+        color: white;
         display: flex;
         flex-direction: column;
         align-items: center;
+        background: rgba(255, 255, 255, 0.09);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+      .content {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        text-align: center;
       }
       h1 {
-        padding: 10px;
-        padding-top: 20px;
+        padding-top: 80px;
         font-size: 42px;
       }
       p {
+        padding: 20px;
         font-weight: bold;
-        padding: 10px;
         font-size: 18px;
       }
       .dob {
-        width: 50%;
+        width: 80%;
         height: 36px;
         border-radius: 5px;
         border: 1px solid #d3d3d3;
-        padding: 10px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.7);
       }
       button {
         padding: 10px;
-        background-color: #007bff;
+        background-color: rgba(255, 255, 255, 0.4);
         border: none;
         color: white;
         border-radius: 5px;
         padding-left: 15px;
         padding-right: 15px;
-        margin-top: 10px;
+        margin-top: 20px;
+        transition: all 0.5s;
       }
       button:hover {
         cursor: pointer;
-        background-color: #0167d4;
+        background-color: rgba(255, 255, 255, 0.5);
       }
       .display {
-        font-size: 26px;
-        margin-top: 10px;
+        width: 250px;
+      }
+      .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      .loader {
+        display: flex;
+        flex-direction: column;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .fadeIn {
+        animation: fadeIn 2s;
+      }
+      .cube1 {
+        position: absolute;
+        top: 5%;
+        left: 65%;
+      }
+      .cube2 {
+        position: absolute;
+        top: 70%;
+        left: 35%;
+      }
+      .cube3 {
+        position: absolute;
+        top: 80%;
+        left: 60%;
+      }
+      .cube4 {
+        position: absolute;
+        top: 0%;
+        left: 35%;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h1>Age Calculator</h1>
-      <p>Enter your date of birth</p>
-      <input class="dob" type="date" id="dob" name="dob" />
-      <button class="btn" onclick="handleClick()">Calculate Age</button>
-      <p id="display">Your Age is 0 years old</p>
+    <div class="loader">
+      <div class="loader">
+        <img src="loader.gif" alt="" width="80px" />
+        <p>Loading.....</p>
+      </div>
+    </div>
+    <div>
+      <img class="cube1" src="cube.png" alt="" width="100" />
+      <img class="cube2" src="cube.png" alt="" width="100" />
+      <img class="cube3" src="cube.png" alt="" width="100" />
+      <img class="cube4" src="cube.png" alt="" width="100" />
+    </div>
+
+    <div class="content">
+      <div class="container">
+        <h1>Age Calculator</h1>
+        <p>Enter your date of birth</p>
+        <div class="form">
+          <input class="dob" type="date" id="dob" name="dob" />
+          <button class="btn" onclick="handleClick()">Calculate Age</button>
+        </div>
+
+        <p class="display" id="display">Your Age is 0 years old</p>
+      </div>
     </div>
     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+          // Hide the loader
+          const loader = document.querySelector(".loader");
+          loader.style.display = "none";
+
+          // Show the content
+          const content = document.querySelector(".container");
+          content.style.display = "block";
+          content.classList.add("fadeIn"); // Adds the className "fadeIn" after the content
+        }, 2000); // Change 2000 to the actual loading time in milliseconds
+      });
+
       let data = document.getElementById("dob");
       let selectedYear;
       let selectedMonth;
@@ -79,7 +187,6 @@
         selectedYear = selectedDate.getFullYear();
         selectedMonth = selectedDate.getMonth();
         selecteddate = selectedDate.getDay();
-        // console.log(selectedYear);
       });
 
       function handleClick() {
@@ -87,8 +194,6 @@
         let currentDate = new Date();
         let currentYear = currentDate.getFullYear();
         let currentMonth = currentDate.getMonth();
-        // console.log(currentYear);
-        // console.log(currentMonth);
         let age;
         let month;
         let day;
