@@ -1,7 +1,5 @@
-# Simple HTML and JavaScript Example
-
-This is a basic example of an HTML page with JavaScript that demonstrates how to modify the styling of an HTML element dynamically.
-
+## Hosted Link
+[Link for DOM Project -1](https://karan9927.github.io/JavaScript/DOM%20Project%201/)
 ## HTML Structure
 
 The HTML structure is simple and includes the following elements:
