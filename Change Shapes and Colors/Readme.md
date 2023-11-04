@@ -1,8 +1,6 @@
 ## Hosted Link
 [Hosted Link for Change Shapes and Colors](https://karan9927.github.io/JavaScript/Change%20Shapes%20and%20Colors/)
 
-# README
-
 ## Geekster Change Shape and Color
 
 This repository contains the HTML, CSS, and JavaScript code for a web page that allows you to change the shape and color of a graphical element.
