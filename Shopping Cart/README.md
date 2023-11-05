@@ -45,7 +45,3 @@ This document provides an overview of the JavaScript code used in the "Shopping 
 ### Event Listeners
 
 - Event listeners are added to the "Decrease" and "Increase" buttons for each product. These event listeners handle the logic for decreasing and increasing the quantity of products in the cart, updating the cart, and recalculating the total price.
-
-This summarizes the key JavaScript code used in the "Shopping Cart" web page.
-
-For more details, you can refer to the actual JavaScript code in `script.js`.
