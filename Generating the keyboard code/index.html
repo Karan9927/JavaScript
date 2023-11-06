@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vintage Keycode Keyboard</title>
+    <style>
+      body {
+        background-color: #d9ece9;
+        display: flex;
+        gap: 15px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #keyboardDisplay {
+        font-family: "Courier New", monospace;
+        font-size: 36px;
+        padding: 20px;
+        position: fixed;
+        width: 500px;
+        background-color: #dedede;
+        border: 2px solid #999;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        color: #191b41;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      #keyid {
+        font-family: "Courier New", monospace;
+        font-size: 52px;
+        margin-top: 250px;
+        padding: 20px;
+        background-color: #dedede;
+        border: 2px solid #999;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        color: rgb(0, 145, 255);
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        display: none;
+      }
+      #soundEffect {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="keyboardDisplay">Press any keyboard key</div>
+    <div id="keyid"></div>
+    <div id="keyHistory"></div>
+
+    <audio id="soundEffect1">
+      <source src="audio1.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="soundEffect2">
+      <source src="audio2.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+    <audio id="soundEffect3">
+      <source src="audio3.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <script>
+      const keyboardDisplay = document.getElementById("keyboardDisplay");
+      const soundEffect = document.getElementById("soundEffect");
+      const keyid = document.getElementById("keyid");
+      const keyHistoryDiv = document.getElementById("keyHistory");
+      const keyHistory = [];
+
+      document.addEventListener("keydown", (event) => {
+        const key = event.key;
+        const keyCode = event.keyCode;
+
+        keyboardDisplay.innerHTML = `You pressed ${key}`;
+        keyid.textContent = `${keyCode}`;
+        keyid.style.display = "block";
+        if (event.ctrlKey && key.toLowerCase() === "z") {
+          soundEffect1.play();
+        }
+        if (event.altKey && key.toLowerCase() === "x") {
+          soundEffect2.play();
+        }
+        if (event.ctrlKey && key.toLowerCase() === "c") {
+          soundEffect3.play();
+        }
+        keyHistory.push(key);
+        console.log(keyHistory);
+        // keyHistoryDiv.textContent = "Key History: " + keyHistory.join(", ");
+      });
+    </script>
+  </body>
+</html>
