@@ -1,0 +1,50 @@
+body {
+  background-color: #d9ece9;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#keyboardDisplay {
+  font-family: "Courier New", monospace;
+  font-size: 36px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 500px;
+  background-color: #dedede;
+  border: 2px solid #999;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: #191b41;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+#keyid {
+  font-family: "Courier New", monospace;
+  font-size: 52px;
+  padding: 20px;
+  background-color: #dedede;
+  border: 2px solid #999;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: rgb(0, 145, 255);
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  display: none;
+}
+#soundEffect {
+  display: none;
+}
+.special {
+  font-family: "Courier New", monospace;
+  font-size: 32px;
+  font-weight: 500;
+  border-radius: 10px;
+  color: #191b41;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
