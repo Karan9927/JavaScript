@@ -1,8 +1,6 @@
 ## Hosted Link
 [Link for Generating the keyboard code](https://karan9927.github.io/JavaScript/Generating%20the%20keyboard%20code/)
 
-This is a simple HTML webpage that allows users to interact with a vintage keycode keyboard. It provides visual and audio feedback when specific keys are pressed.
-
 ## HTML Tags Used
 
 ### `<html>`
