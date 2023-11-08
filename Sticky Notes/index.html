@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky Notes</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="sticky-notes.png" type="image/png" />
+    <!-- <script src="script.js"></script> -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="notes-container">
+        <textarea
+          placeholder="// Write a note here"
+          name="note"
+          id="textarea"
+          cols="30"
+          rows="10"
+        ></textarea>
+        <div class="inputs-container">
+          <input type="color" name="" id="picker" value="#ffffff" />
+          <button id="submit" onclick="readInput()">Add note</button>
+        </div>
+      </div>
+      <div>
+        <div id="noteslist"></div>
+        <div id="error-message">
+          <p>You haven't added notes yet.</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>Made with ❤ By Karan</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
