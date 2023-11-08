@@ -23,15 +23,8 @@ function renderList() {
   let listElement = document.getElementById("noteslist");
   listElement.innerHTML = "";
 
-  if (notes.length === 0) {
-    document.getElementById("error-message").style.display = "block";
-  } else {
-    document.getElementById("error-message").style.display = "none";
-  }
-
   notes.forEach(function (note, index) {
     let list = document.createElement("div");
-
     let container = document.createElement("div");
     container.classList.add("my-note-container");
     container.style.backgroundColor = note.color;
