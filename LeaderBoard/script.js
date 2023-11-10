@@ -21,19 +21,27 @@ const onCtaContainerClick = (e) => {
 };
 
 const createCard = (firstName, lastName, country, score) => {
+  const currentDate = new Date();
+  const formattedDate = `${currentDate.toLocaleString("default", {
+    month: "long",
+  })} ${currentDate.getDate()}, ${currentDate.getFullYear()}`;
+  const formattedTime = `${currentDate.getHours()}:${
+    (currentDate.getMinutes() < 10 ? "0" : "") + currentDate.getMinutes()
+  }:${(currentDate.getSeconds() < 10 ? "0" : "") + currentDate.getSeconds()}`;
+
   const cardContents = `
-  <div>
-  <p>${firstName} ${lastName}</p>
-  <p></p>
-</div>
-<div class="country">${country}</div>
-<div class="score">${score}</div>
-<div class="cta-container">
-  <button class="delete">Delete</button>
-  <button class="add">+5</button>
-  <button class="minus">-5</button>
-</div>
-    `;
+    <div>
+      <p>${firstName} ${lastName}</p>
+      <p class="date">${formattedDate} ${formattedTime}</p>
+    </div>
+    <div class="country">${country}</div>
+    <div class="score">${score}</div>
+    <div class="cta-container">
+      <button class="delete">Delete</button>
+      <button class="add">+5</button>
+      <button class="minus">-5</button>
+    </div>
+  `;
 
   const card = document.createElement("div");
   card.classList.add("card");

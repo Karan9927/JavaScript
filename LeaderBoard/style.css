@@ -77,3 +77,6 @@ input {
 .minus:hover {
   background-color: rgb(35, 35, 236);
 }
+.date {
+  font-size: 14px;
+}
