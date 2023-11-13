@@ -31,7 +31,7 @@ const createCard = (firstName, lastName, country, score) => {
 
   const cardContents = `
     <div>
-      <p>${firstName} ${lastName}</p>
+      <p class="name">${firstName} ${lastName}</p>
       <p class="date">${formattedDate} ${formattedTime}</p>
     </div>
     <div class="country">${country}</div>

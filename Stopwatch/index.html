@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="chronometer.png" type="image/png" />
+    <title>Stop-Watch</title>
+  </head>
+  <body>
+    <div class="stopwatch">
+      <div id="display">00:00:00:00</div>
+    </div>
+    <div class="Btns">
+      <button id="startBtn" onclick="start()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="56"
+          height="56"
+          fill="white"
+          class="bi bi-play"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M10.804 8 5 4.633v6.734L10.804 8zm.792-.696a.802.802 0 0 1 0 1.392l-6.363 3.692C4.713 12.69 4 12.345 4 11.692V4.308c0-.653.713-.998 1.233-.696l6.363 3.692z"
+          />
+        </svg>
+      </button>
+      <button id="stopBtn" onclick="stop()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="56"
+          height="56"
+          fill="white"
+          class="bi bi-pause"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M6 3.5a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5zm4 0a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-1 0V4a.5.5 0 0 1 .5-.5z"
+          />
+        </svg>
+      </button>
+      <button id="resetBtn" onclick="reset()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          fill="white"
+          class="bi bi-arrow-clockwise"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"
+          />
+          <path
+            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"
+          />
+        </svg>
+      </button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+body {
+  background-color: #262e41;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  color: white;
+}
+
+.stopwatch {
+  border: 3px solid white;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  align-items: center;
+}
+
+#display {
+  font-size: 4em;
+  margin-bottom: 10px;
+}
+
+button {
+  font-size: 1em;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+#startBtn,
+#stopBtn,
+#resetBtn {
+  background-color: transparent;
+}
+#startBtn svg,
+#stopBtn svg,
+#resetBtn svg {
+  transition: all 0.3s ease-in-out;
+}
+#startBtn svg:hover,
+#stopBtn svg:hover,
+#resetBtn svg:hover {
+  fill: yellow;
+}
