@@ -9,6 +9,12 @@
   </head>
   <body>
     <main>
+      <div class="alarm-div">
+        <input type="number" id="alarmHours" placeholder="Hours" />
+        <input type="number" id="alarmMinutes" placeholder="Minutes" />
+        <button id="set" onclick="set()">Set Alarm</button>
+        <button class="stopSound" onclick="stopSound()">Stop</button>
+      </div>
       <div id="display">
         <div class="display-date"></div>
         <div id="display-time">
@@ -19,6 +25,11 @@
         </div>
       </div>
     </main>
+
+    <audio id="soundEffect">
+      <source src="alarm.wav" type="audio/wav" />
+      Your browser does not support the audio element.
+    </audio>
     <script src="script.js"></script>
   </body>
 </html>

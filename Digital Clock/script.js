@@ -1,3 +1,34 @@
+let alarmTime;
+
+function set() {
+  const hoursInput = document.getElementById("alarmHours");
+  const alarmHour = parseInt(hoursInput.value, 10);
+
+  const minutesInput = document.getElementById("alarmMinutes");
+  const alarmMinutes = parseInt(minutesInput.value, 10);
+
+  const alarmSeconds = 0;
+
+  alarmTime = `${formatTime(alarmHour)}${formatTime(alarmMinutes)}${formatTime(
+    alarmSeconds
+  )}`;
+  console.log(alarmTime);
+
+  hoursInput.value = "";
+  minutesInput.value = "";
+}
+
+function padSingleDigit(num) {
+  return num < 10 ? `0${num}` : num;
+}
+function stopSound() {
+  const soundEffect = document.getElementById("soundEffect");
+  if (soundEffect) {
+    soundEffect.pause();
+    soundEffect.currentTime = 0;
+  }
+}
+
 function formatTime(time) {
   if (time < 10) {
     return "0" + time;
@@ -24,6 +55,14 @@ function updateDisplay() {
 
   todayHours = todayHours % 12 || 12;
 
+  const currentTime = `${formatTime(todayHours)}${formatTime(
+    todayMinutes
+  )}${formatTime(todaySeconds)}`;
+
+  if (alarmTime === currentTime) {
+    const soundEffect = document.getElementById("soundEffect");
+    soundEffect.play();
+  }
   displayHours.textContent = `${formatTime(todayHours)}:`;
   displayMinutes.textContent = `${formatTime(todayMinutes)}:`;
   displaySeconds.textContent = `${formatTime(todaySeconds)}`;
