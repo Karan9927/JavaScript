@@ -7,7 +7,7 @@ This repository contains a simple web page that generates dad jokes using the Da
 ## Usage
 
 1. Open the `index.html` file in a web browser.
-2. Click the "Generate Joke" button to fetch and display a new dad joke.
+2. Click the "Tell Me !" button to fetch and display a new dad joke.
 3. The joke will be displayed in a container on the page.
 4. Click the "Another" button to fetch and display another joke.
 
