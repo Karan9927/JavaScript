@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+#loading {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 48%;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  width: 100%;
+  background-color: #dcdfe3;
+}
+#container {
+  width: 550px;
+  height: 420px;
+  text-align: center;
+  padding: 10px;
+  background-color: white;
+  border-radius: 18px;
+  box-shadow: 0 0 3px #aaa;
+}
+.logo {
+  height: 150px;
+}
+#jokes-p {
+  padding: 15px;
+  background-color: rgba(165, 1, 175, 0.85);
+  color: white;
+  border-radius: 18px;
+  font-size: 22px;
+  text-align: left;
+  font-weight: 300;
+}
+#joke-btn {
+  padding: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  color: white;
+  font-size: 200%;
+  border: none;
+  border-radius: 5px;
+  background-color: #2c84d6;
+  cursor: pointer;
+  font-weight: 300;
+}
