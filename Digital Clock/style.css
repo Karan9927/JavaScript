@@ -56,7 +56,13 @@ main {
   border: none;
   outline: none;
 }
-
+#error {
+  position: absolute;
+  top: 40%;
+  font-size: 16px;
+  color: rgb(255, 79, 79);
+  display: none;
+}
 .alarm-div button {
   border-radius: 22px;
   border: none;

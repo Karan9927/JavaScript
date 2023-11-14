@@ -12,15 +12,23 @@ function set() {
   alarmTime = `${formatTime(alarmHour)}${formatTime(alarmMinutes)}${formatTime(
     alarmSeconds
   )}`;
-  console.log(alarmTime);
+  console.log("Alarm hour", alarmHour);
+  if (alarmTime === "NaNNaN00") {
+    const error = document.getElementById("error");
+    error.style.display = "block";
+  } else {
+    const error = document.getElementById("error");
+    error.innerText = "Your Alarm Is Set !";
+    error.style.display = "block";
+
+    error.style.color = "green";
+    console.log("Alarm is set for :", alarmTime);
+  }
 
   hoursInput.value = "";
   minutesInput.value = "";
 }
 
-function padSingleDigit(num) {
-  return num < 10 ? `0${num}` : num;
-}
 function stopSound() {
   const soundEffect = document.getElementById("soundEffect");
   if (soundEffect) {
