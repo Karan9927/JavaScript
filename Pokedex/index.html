@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="pikachu.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Pokédex</title>
+  </head>
+  <body>
+    <h1 class="heading">Pokédex</h1>
+    <div class="searching">
+      <select name="FilterByTypes" id="FilterByTypes"></select>
+      <button id="filter-btn" onclick="filterbytype()">Filter by Type</button>
+      <input type="search" id="search" placeholder="Search Pokémon..." />
+      <button id="reset" onclick="reset()">Reset</button>
+    </div>
+    <div class="cards-container">
+      <div id="cards" class="cards"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
