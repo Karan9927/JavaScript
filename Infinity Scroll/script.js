@@ -3,23 +3,15 @@ const apiUrl = "https://api.unsplash.com/photos/";
 let page = 1;
 
 const imageContainer = document.getElementById("image-container");
-const container = document.getElementById("image-container");
 const loader = document.getElementById("loader");
-const phoneContainer = document.getElementById("phone-image");
 
 async function getImages() {
   try {
     const response = await fetch(`${apiUrl}?page=${page}&client_id=${apikey}`);
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch images. Status: ${response.status}`);
-    }
-
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error("Error fetching images:", error.message);
-    throw error;
+    console.error("Error fetching images:", error);
   }
 }
 
@@ -39,25 +31,23 @@ function displayImages(images) {
 
 async function loadMoreImages() {
   page++;
-  loader.style.display = "block"; // Show loader while fetching
   const newImages = await getImages();
   displayImages(newImages);
-  loader.style.display = "none"; // Hide loader after fetching
 }
 
+// Initial load
 getImages().then(displayImages);
 
-imageContainer.addEventListener("scroll", () => {
-  const { scrollTop, scrollHeight, clientHeight } = imageContainer;
-  const threshold = 50;
+// Infinite scroll
+window.addEventListener("scroll", () => {
+  const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
-  if (scrollTop + clientHeight >= scrollHeight - threshold) {
+  if (scrollTop + clientHeight >= scrollHeight - 10) {
     loadMoreImages();
   }
 });
 
-// Adjust the timeout duration based on your loading time
 setTimeout(() => {
   loader.style.display = "none";
-  container.style.display = "block"; // Set to "flex" if it's a flex container
+  imageContainer.style.display = "block"; // Set to "flex" if it's a flex container
 }, 2000);
