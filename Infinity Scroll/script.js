@@ -3,6 +3,9 @@ const apiUrl = "https://api.unsplash.com/photos/";
 let page = 1;
 
 const imageContainer = document.getElementById("image-container");
+const container = document.getElementById("image-container");
+const loader = document.getElementById("loader");
+const phoneContainer = document.getElementById("phone-image");
 
 async function getImages() {
   try {
@@ -36,18 +39,25 @@ function displayImages(images) {
 
 async function loadMoreImages() {
   page++;
+  loader.style.display = "block"; // Show loader while fetching
   const newImages = await getImages();
   displayImages(newImages);
+  loader.style.display = "none"; // Hide loader after fetching
 }
 
 getImages().then(displayImages);
 
 imageContainer.addEventListener("scroll", () => {
   const { scrollTop, scrollHeight, clientHeight } = imageContainer;
-
   const threshold = 50;
 
   if (scrollTop + clientHeight >= scrollHeight - threshold) {
     loadMoreImages();
   }
 });
+
+// Adjust the timeout duration based on your loading time
+setTimeout(() => {
+  loader.style.display = "none";
+  container.style.display = "block"; // Set to "flex" if it's a flex container
+}, 2000);
