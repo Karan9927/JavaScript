@@ -6,12 +6,14 @@ let page = 1;
 
 function searchImages() {
   const query = searchInput.value;
+  page = 1;
 
   fetch(
     `https://api.unsplash.com/search/photos?query=${query}&client_id=${accessKey}&page=${page}`
   )
     .then((response) => response.json())
     .then((data) => {
+      console.log("API Response:", data);
       displayImages(data.results);
       searchInput.value = "";
     })
@@ -19,7 +21,7 @@ function searchImages() {
 }
 
 function displayImages(images) {
-  imageResults.innerHTML = "";
+  console.log("Displaying images:", images);
 
   images.forEach((image) => {
     const imageElement = document.createElement("img");
@@ -32,7 +34,7 @@ function displayImages(images) {
     downloadContainer.classList.add("download-container");
 
     const downloadLink = document.createElement("a");
-    downloadLink.href = image.urls.full; // Use the URL of the full-size image for download
+    downloadLink.href = image.urls.full;
     downloadLink.download = "downloaded_image.jpg";
 
     const downloadButton = document.createElement("button");
@@ -43,6 +45,7 @@ function displayImages(images) {
 
     imageContainer.appendChild(imageElement);
     imageContainer.appendChild(downloadContainer);
+
     imageResults.appendChild(imageContainer);
   });
 
