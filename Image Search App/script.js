@@ -7,6 +7,7 @@ let page = 1;
 function searchImages() {
   const query = searchInput.value;
   page = 1;
+  imageResults.innerHTML = "";
 
   fetch(
     `https://api.unsplash.com/search/photos?query=${query}&client_id=${accessKey}&page=${page}`
