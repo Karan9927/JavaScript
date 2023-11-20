@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+.lightDark {
+  position: absolute;
+  right: 4rem;
+  top: 1rem;
+}
+
+body.dark {
+  background-color: #292c35;
+}
+
+body.dark h1,
+body.dark h3,
+body.dark p,
+body.dark .support a {
+  color: #fff;
+}
+body.dark #input {
+  color: black;
+}
+body.dark #textarea {
+  color: #fff;
+  background-color: #292c35bc;
+}
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+#input {
+  font-weight: bold;
+  border-radius: 0.5rem;
+  width: 18rem;
+  height: 3rem;
+  padding: 0.5rem 0.7rem;
+  font-size: 1.1rem;
+  color: black;
+  outline: none;
+  background-color: rgb(231, 231, 231);
+}
+#input:hover {
+  background-color: rgb(217, 217, 217);
+}
+.support {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+
+.support a {
+  color: #292c35;
+  font-size: 32px;
+  backface-visibility: hidden;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.support a:hover {
+  transform: scale(1.1);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+h1 {
+  margin: 1rem;
+  font-size: 4rem;
+}
+
+#container {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 20rem;
+  height: 26rem;
+  border: 1px solid rgb(0, 255, 229);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.cardImage {
+  width: 100%;
+  height: 20rem;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.text h3 {
+  text-align: center;
+}
+.text p {
+  margin: 0.5rem 0;
+}
+
+#pagination {
+  margin: 1rem 0;
+}
+
+.btn {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #0f0f14;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 0.4rem;
+  font-size: 1.4rem;
+  transition: all 0.2s ease-in-out;
+}
+.btn:hover {
+  box-shadow: inset 0px 10px 20px 2px rgba(0, 255, 255, 0.7);
+}
+
+.btn:active {
+  transform: translateY(5px);
+  scale: 0.94;
+}
+
+.spanNum {
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+#loader {
+  display: none;
+}
+
+#loader svg {
+  margin-top: 4rem;
+  width: 5rem;
+}
