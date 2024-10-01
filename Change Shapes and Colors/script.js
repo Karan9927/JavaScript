@@ -45,6 +45,6 @@ changeShape.addEventListener("click", (e) => {
   shapeBox.classList = "";
 
   const randomShape = shapes[Math.floor(Math.random() * shapes.length)];
-  // console.log(randomShape);
+  // console.log(randomShape); console,the shapes
   shapeBox.classList.add(randomShape);
 });
